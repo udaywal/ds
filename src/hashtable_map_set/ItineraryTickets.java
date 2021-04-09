@@ -1,4 +1,4 @@
-package hashtable;
+package hashtable_map_set;
 
 import java.util.HashMap;
 import java.util.HashSet;
