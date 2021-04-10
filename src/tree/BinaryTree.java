@@ -138,6 +138,43 @@ class Tree {
 
 }
 
+class BST {
+
+    Node node;
+    BST () {
+        this.node = null;
+    }
+
+    void inOrderDFS(Node node) {
+        if (node == null)
+            return;
+
+        // recursively go to left subtree
+        inOrderDFS(node.left);
+
+        // visit the parent node (parent of left & right children)
+        System.out.print(node.data + " ");
+
+        // recursively go to right subtree
+        inOrderDFS(node.right);
+    }
+
+    // Method to search for a node with given key in a BST
+    static boolean search(Node node, int key) {
+        if (node == null)
+            return false;
+
+        if (key == node.data)
+            return true;
+
+        if (key < node.data)
+            return search(node.left, key);
+        else
+            return search(node.right, key);
+    }
+
+}
+
 public class BinaryTree {
 
     public static void main(String[] args) {
@@ -170,8 +207,25 @@ public class BinaryTree {
         // tree.mirror(tree.root);
         // tree.preOrderDFS(tree.root);
         
-        System.out.println("\nSpiral order traversal : ");
-        tree.spiralLevelOrderTraversal(tree.root);
+        // System.out.println("\nSpiral order traversal : ");
+        // tree.spiralLevelOrderTraversal(tree.root);
+
+        /* Binary Search Tree */
+        BST bst = new BST();
+
+        bst.node = new Node(5);
+
+        bst.node.left = new Node(3);
+        bst.node.right = new Node(7);
+
+        bst.node.left.left = new Node(2);
+        bst.node.left.right = new Node(4);
+
+        bst.node.right.left = new Node(6);
+        bst.node.right.right = new Node(8);
+
+        System.out.println(BST.search(bst.node, 10));
+
     }
-    
+
 }
