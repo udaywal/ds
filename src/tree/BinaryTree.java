@@ -345,9 +345,9 @@ public class BinaryTree {
         
         // System.out.println("\nHeight of binary tree : " + tree.findHeight(tree.root));
         
-        System.out.println("\nMirror tree : ");
-        tree.mirror(tree.root);
-        tree.preOrderDFS(tree.root);
+        // System.out.println("\nMirror tree : ");
+        // tree.mirror(tree.root);
+        // tree.preOrderDFS(tree.root);
         
         /* Total Leaf Count in a Tree */
         // int leaves = tree.findTotalLeaf(tree.root);
